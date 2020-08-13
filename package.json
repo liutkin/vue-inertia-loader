@@ -1,7 +1,7 @@
 {
   "name": "vue-inertia-loader",
-  "version": "1.0.0",
-  "description": "Loading animation Vue component.",
+  "version": "1.0.1",
+  "description": "Data loading animation component for VueJS.",
   "license": "MIT",
   "repository": "liutkin/vue-inertia-loader",
   "author": {
