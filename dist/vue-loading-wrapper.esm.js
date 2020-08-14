@@ -15,7 +15,7 @@
 //
 //
 var script = {
-  name: "InertiaLoader",
+  name: "LoadingWrapper",
   props: {
     loading: Boolean,
     pulse: Boolean,
@@ -29,19 +29,19 @@ var script = {
     },
     containerClass: {
       type: String,
-      default: "inertia-loader"
+      default: "loading-wrapper"
     },
     barClass: {
       type: String,
-      default: "inertia-loader__bar"
+      default: "loading-wrapper__bar"
     },
     progressClass: {
       type: String,
-      default: "inertia-loader__progress"
+      default: "loading-wrapper__progress"
     },
     textClass: {
       type: String,
-      default: "inertia-loader__text"
+      default: "loading-wrapper__text"
     },
     barBgColor: {
       type: String,
@@ -261,8 +261,8 @@ var __vue_staticRenderFns__ = [];
 
 const __vue_inject_styles__ = function (inject) {
   if (!inject) return;
-  inject("data-v-9d4815e4_0", {
-    source: ".inertia-loader[data-v-9d4815e4]{display:flex;flex-direction:column;justify-content:center;align-items:center;user-select:none}.inertia-loader__bar[data-v-9d4815e4]{position:relative;width:10rem}.inertia-loader__progress[data-v-9d4815e4]{height:.05rem;transition:width .25s linear}.animate-pulse[data-v-9d4815e4]{animation:pulse-data-v-9d4815e4 .5s ease infinite}.inertia-loader__text[data-v-9d4815e4]{font-family:sans-serif;font-size:.8rem}@keyframes pulse-data-v-9d4815e4{from,to{opacity:1}50%{opacity:.25}}",
+  inject("data-v-44a53d0a_0", {
+    source: ".loading-wrapper[data-v-44a53d0a]{display:flex;flex-direction:column;justify-content:center;align-items:center;user-select:none}.loading-wrapper__bar[data-v-44a53d0a]{position:relative;width:10rem}.loading-wrapper__progress[data-v-44a53d0a]{height:.05rem;transition:width .25s linear}.animate-pulse[data-v-44a53d0a]{animation:pulse-data-v-44a53d0a .5s ease infinite}.loading-wrapper__text[data-v-44a53d0a]{font-family:sans-serif;font-size:.8rem}@keyframes pulse-data-v-44a53d0a{from,to{opacity:1}50%{opacity:.25}}",
     map: undefined,
     media: undefined
   });
@@ -270,7 +270,7 @@ const __vue_inject_styles__ = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__ = "data-v-9d4815e4";
+const __vue_scope_id__ = "data-v-44a53d0a";
 /* module identifier */
 
 const __vue_module_identifier__ = undefined;
@@ -288,10 +288,10 @@ const __vue_component__ = /*#__PURE__*/normalizeComponent({
 
 // Import vue component
 
-const install = function installInertiaLoader(Vue) {
+const install = function installLoadingWrapper(Vue) {
   if (install.installed) return;
   install.installed = true;
-  Vue.component("InertiaLoader", __vue_component__);
+  Vue.component("LoadingWrapper", __vue_component__);
 }; // Create module definition for Vue.use()
 // to be registered via Vue.use() as well as Vue.component()
 

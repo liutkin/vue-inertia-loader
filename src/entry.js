@@ -1,11 +1,11 @@
 // Import vue component
-import component from "@/InertiaLoader.vue";
+import component from "@/LoadingWrapper.vue";
 
 // install function executed by Vue.use()
-const install = function installInertiaLoader(Vue) {
+const install = function installLoadingWrapper(Vue) {
   if (install.installed) return;
   install.installed = true;
-  Vue.component("InertiaLoader", component);
+  Vue.component("LoadingWrapper", component);
 };
 
 // Create module definition for Vue.use()

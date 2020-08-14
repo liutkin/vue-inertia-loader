@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <inertia-loader loading pulse>Loaded</inertia-loader>
+    <loading-wrapper loading pulse>Loaded</loading-wrapper>
   </div>
 </template>
 
 <script>
 import Vue from "vue";
-import InertiaLoader from "@/InertiaLoader.vue";
+import LoadingWrapper from "@/LoadingWrapper.vue";
 
 export default Vue.extend({
   name: "ServeDev",
   components: {
-    InertiaLoader,
+    LoadingWrapper,
   },
 });
 </script>

@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: "InertiaLoader",
+  name: "LoadingWrapper",
   props: {
     loading: Boolean,
     pulse: Boolean,
@@ -30,19 +30,19 @@ export default {
     },
     containerClass: {
       type: String,
-      default: "inertia-loader",
+      default: "loading-wrapper",
     },
     barClass: {
       type: String,
-      default: "inertia-loader__bar",
+      default: "loading-wrapper__bar",
     },
     progressClass: {
       type: String,
-      default: "inertia-loader__progress",
+      default: "loading-wrapper__progress",
     },
     textClass: {
       type: String,
-      default: "inertia-loader__text",
+      default: "loading-wrapper__text",
     },
     barBgColor: {
       type: String,
@@ -95,7 +95,7 @@ export default {
 </script>
 
 <style scoped>
-.inertia-loader {
+.loading-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,12 +103,12 @@ export default {
   user-select: none;
 }
 
-.inertia-loader__bar {
+.loading-wrapper__bar {
   position: relative;
   width: 10rem;
 }
 
-.inertia-loader__progress {
+.loading-wrapper__progress {
   height: 0.05rem;
   transition: width 0.25s linear;
 }
@@ -117,7 +117,7 @@ export default {
   animation: pulse 0.5s ease infinite;
 }
 
-.inertia-loader__text {
+.loading-wrapper__text {
   font-family: sans-serif;
   font-size: 0.8rem;
 }

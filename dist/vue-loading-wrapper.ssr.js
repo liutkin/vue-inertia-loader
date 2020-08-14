@@ -15,7 +15,7 @@
 //
 //
 var script = {
-  name: "InertiaLoader",
+  name: "LoadingWrapper",
   props: {
     loading: Boolean,
     pulse: Boolean,
@@ -29,19 +29,19 @@ var script = {
     },
     containerClass: {
       type: String,
-      default: "inertia-loader"
+      default: "loading-wrapper"
     },
     barClass: {
       type: String,
-      default: "inertia-loader__bar"
+      default: "loading-wrapper__bar"
     },
     progressClass: {
       type: String,
-      default: "inertia-loader__progress"
+      default: "loading-wrapper__progress"
     },
     textClass: {
       type: String,
-      default: "inertia-loader__text"
+      default: "loading-wrapper__text"
     },
     barBgColor: {
       type: String,
@@ -220,14 +220,14 @@ var __vue_render__ = function __vue_render__() {
     class: _vm.containerClass
   }, [_vm._ssrNode("<div" + _vm._ssrClass(null, _vm.barClass) + _vm._ssrStyle(null, {
     backgroundColor: _vm.barBgColor
-  }, null) + " data-v-9d4815e4><div" + _vm._ssrClass(null, [_vm.progressClass, {
+  }, null) + " data-v-44a53d0a><div" + _vm._ssrClass(null, [_vm.progressClass, {
     'animate-pulse': _vm.pulse
   }]) + _vm._ssrStyle(null, {
     width: _vm.progress + "%",
     backgroundColor: _vm.progressBgColor
-  }, null) + " data-v-9d4815e4></div></div> <div" + _vm._ssrClass(null, _vm.textClass) + _vm._ssrStyle(null, {
+  }, null) + " data-v-44a53d0a></div></div> <div" + _vm._ssrClass(null, _vm.textClass) + _vm._ssrStyle(null, {
     color: _vm.textColor
-  }, null) + " data-v-9d4815e4>" + _vm._ssrEscape(_vm._s(_vm.text)) + "</div>")], 2) : _c(_vm.tag, {
+  }, null) + " data-v-44a53d0a>" + _vm._ssrEscape(_vm._s(_vm.text)) + "</div>")], 2) : _c(_vm.tag, {
     tag: "component"
   }, [_vm._t("default")], 2);
 };
@@ -237,8 +237,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-9d4815e4_0", {
-    source: ".inertia-loader[data-v-9d4815e4]{display:flex;flex-direction:column;justify-content:center;align-items:center;user-select:none}.inertia-loader__bar[data-v-9d4815e4]{position:relative;width:10rem}.inertia-loader__progress[data-v-9d4815e4]{height:.05rem;transition:width .25s linear}.animate-pulse[data-v-9d4815e4]{animation:pulse-data-v-9d4815e4 .5s ease infinite}.inertia-loader__text[data-v-9d4815e4]{font-family:sans-serif;font-size:.8rem}@keyframes pulse-data-v-9d4815e4{from,to{opacity:1}50%{opacity:.25}}",
+  inject("data-v-44a53d0a_0", {
+    source: ".loading-wrapper[data-v-44a53d0a]{display:flex;flex-direction:column;justify-content:center;align-items:center;user-select:none}.loading-wrapper__bar[data-v-44a53d0a]{position:relative;width:10rem}.loading-wrapper__progress[data-v-44a53d0a]{height:.05rem;transition:width .25s linear}.animate-pulse[data-v-44a53d0a]{animation:pulse-data-v-44a53d0a .5s ease infinite}.loading-wrapper__text[data-v-44a53d0a]{font-family:sans-serif;font-size:.8rem}@keyframes pulse-data-v-44a53d0a{from,to{opacity:1}50%{opacity:.25}}",
     map: undefined,
     media: undefined
   });
@@ -246,10 +246,10 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-9d4815e4";
+var __vue_scope_id__ = "data-v-44a53d0a";
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-9d4815e4";
+var __vue_module_identifier__ = "data-v-44a53d0a";
 /* functional template */
 
 var __vue_is_functional_template__ = false;
@@ -260,10 +260,10 @@ var __vue_component__ = /*#__PURE__*/normalizeComponent({
   staticRenderFns: __vue_staticRenderFns__
 }, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, undefined, createInjectorSSR, undefined);// Import vue component
 
-var install = function installInertiaLoader(Vue) {
+var install = function installLoadingWrapper(Vue) {
   if (install.installed) return;
   install.installed = true;
-  Vue.component("InertiaLoader", __vue_component__);
+  Vue.component("LoadingWrapper", __vue_component__);
 }; // Create module definition for Vue.use()
 
 
