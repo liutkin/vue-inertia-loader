@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue-loading-wrapper</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/normalize.css/normalize.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/@kocktail/css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 16px;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        background-color: white;
+        font-family: Helvetica, sans-serif;
+        color: rgba(0, 0, 0, 0.9);
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      a {
+        transition: color 0.25s;
+        color: dodgerblue;
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus {
+        color: royalblue;
+      }
+
+      #app {
+        max-width: 20rem;
+      }
+
+      .reset-btn {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .reset-btn:hover,
+      .reset-btn:focus {
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" class="width-full">
+      <h1 class="text-center margin-top-0 margin-bottom-3">
+        vue-loading-wrapper
+      </h1>
+      <loading-wrapper
+        :key="key"
+        :loading="isLoading"
+        pulse
+        class="flex flex-column items-center margin-y-4 text-center"
+        >Content loaded
+        <button type="button" @click="reset" class="reset-btn">
+          ⟲
+        </button>
+      </loading-wrapper>
+      <div class="margin-top-3 text-center">
+        <a href="https://github.com/liutkin/vue-loading-wrapper">GitHub</a>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-loading-wrapper/dist/vue-loading-wrapper.min.js"></script>
+    <script>
+      new Vue({
+        el: document.querySelector("#app"),
+        data: {
+          key: null,
+          isLoading: null,
+        },
+        methods: {
+          reset() {
+            this.isLoading = true;
+            this.key = Math.random().toString();
+            setTimeout(() => {
+              this.isLoading = false;
+            }, Math.floor(Math.random() * 1999) + 1000);
+          },
+        },
+        created() {
+          this.reset();
+        },
+      });
+    </script>
+  </body>
+</html>
