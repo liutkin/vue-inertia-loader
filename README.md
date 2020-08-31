@@ -2,6 +2,10 @@
 
 ![showcase](showcase.gif "showcase")
 
+Data loading animation component for VueJS, inspired by video games loading screens.
+
+🎥 [Demo](https://liutkin.github.io/vue-loading-wrapper/)
+
 ## Install
 
 ```bash
@@ -22,9 +26,7 @@ export default {
 ## Usage
 
 ```html
-<loading-wrapper :loading="isLoading"
-  >Some dynamic content loaded</loading-wrapper
->
+<loading-wrapper :loading="isLoading">Some dynamic content loaded</loading-wrapper>
 ```
 
 ## Props
