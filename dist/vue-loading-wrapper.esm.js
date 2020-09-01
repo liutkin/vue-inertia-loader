@@ -13,7 +13,6 @@
 //
 //
 //
-//
 var script = {
   name: "LoadingWrapper",
   props: {
@@ -27,33 +26,13 @@ var script = {
       type: String,
       default: "div"
     },
-    containerClass: {
+    baseClass: {
       type: String,
       default: "loading-wrapper"
     },
-    barClass: {
+    contentClass: {
       type: String,
-      default: "loading-wrapper__bar"
-    },
-    progressClass: {
-      type: String,
-      default: "loading-wrapper__progress"
-    },
-    textClass: {
-      type: String,
-      default: "loading-wrapper__text"
-    },
-    barBgColor: {
-      type: String,
-      default: "rgba(0, 0, 0, 0.15)"
-    },
-    progressBgColor: {
-      type: String,
-      default: "rgba(0, 0, 0, 0.5)"
-    },
-    textColor: {
-      type: String,
-      default: "rgba(0, 0, 0, 0.9)"
+      default: ""
     }
   },
   data: () => ({
@@ -232,27 +211,21 @@ var __vue_render__ = function () {
   var _c = _vm._self._c || _h;
 
   return _vm.loading || !_vm.isFinishAnimationEnded ? _c('div', {
-    class: _vm.containerClass
+    class: _vm.baseClass
   }, [_c('div', {
-    class: _vm.barClass,
-    style: {
-      backgroundColor: _vm.barBgColor
-    }
+    class: _vm.baseClass + "__bar"
   }, [_c('div', {
-    class: [_vm.progressClass, {
+    class: [_vm.baseClass + "__progress", {
       'animate-pulse': _vm.pulse
     }],
     style: {
-      width: _vm.progress + "%",
-      backgroundColor: _vm.progressBgColor
+      width: _vm.progress + "%"
     }
   })]), _vm._v(" "), _c('div', {
-    class: _vm.textClass,
-    style: {
-      color: _vm.textColor
-    }
-  }, [_vm._v(_vm._s(_vm.text))])]) : _c(_vm.tag, {
-    tag: "component"
+    class: _vm.baseClass + "__text"
+  }, [_vm._v("\n    " + _vm._s(_vm.text) + "\n  ")])]) : _c(_vm.tag, {
+    tag: "component",
+    class: _vm.contentClass
   }, [_vm._t("default")], 2);
 };
 
@@ -261,8 +234,8 @@ var __vue_staticRenderFns__ = [];
 
 const __vue_inject_styles__ = function (inject) {
   if (!inject) return;
-  inject("data-v-44a53d0a_0", {
-    source: ".loading-wrapper[data-v-44a53d0a]{display:flex;flex-direction:column;justify-content:center;align-items:center;user-select:none}.loading-wrapper__bar[data-v-44a53d0a]{position:relative;width:10rem}.loading-wrapper__progress[data-v-44a53d0a]{height:.05rem;transition:width .25s linear}.animate-pulse[data-v-44a53d0a]{animation:pulse-data-v-44a53d0a .5s ease infinite}.loading-wrapper__text[data-v-44a53d0a]{font-family:sans-serif;font-size:.8rem}@keyframes pulse-data-v-44a53d0a{from,to{opacity:1}50%{opacity:.25}}",
+  inject("data-v-650e137a_0", {
+    source: ".loading-wrapper[data-v-650e137a]{display:flex;flex-direction:column;justify-content:center;align-items:center;user-select:none}.loading-wrapper__bar[data-v-650e137a]{position:relative;width:10rem;background:rgba(0,0,0,.15)}.loading-wrapper__progress[data-v-650e137a]{height:.05rem;transition:width .25s linear;background-color:rgba(0,0,0,.5)}.animate-pulse[data-v-650e137a]{animation:pulse-data-v-650e137a .5s ease infinite}.loading-wrapper__text[data-v-650e137a]{font-family:sans-serif;font-size:.8rem;color:rgba(0,0,0,.9)}@keyframes pulse-data-v-650e137a{from,to{opacity:1}50%{opacity:.25}}",
     map: undefined,
     media: undefined
   });
@@ -270,7 +243,7 @@ const __vue_inject_styles__ = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__ = "data-v-44a53d0a";
+const __vue_scope_id__ = "data-v-650e137a";
 /* module identifier */
 
 const __vue_module_identifier__ = undefined;

@@ -13,7 +13,6 @@
 //
 //
 //
-//
 var script = {
   name: "LoadingWrapper",
   props: {
@@ -27,33 +26,13 @@ var script = {
       type: String,
       default: "div"
     },
-    containerClass: {
+    baseClass: {
       type: String,
       default: "loading-wrapper"
     },
-    barClass: {
+    contentClass: {
       type: String,
-      default: "loading-wrapper__bar"
-    },
-    progressClass: {
-      type: String,
-      default: "loading-wrapper__progress"
-    },
-    textClass: {
-      type: String,
-      default: "loading-wrapper__text"
-    },
-    barBgColor: {
-      type: String,
-      default: "rgba(0, 0, 0, 0.15)"
-    },
-    progressBgColor: {
-      type: String,
-      default: "rgba(0, 0, 0, 0.5)"
-    },
-    textColor: {
-      type: String,
-      default: "rgba(0, 0, 0, 0.9)"
+      default: ""
     }
   },
   data: function data() {
@@ -217,18 +196,14 @@ var __vue_render__ = function __vue_render__() {
   var _c = _vm._self._c || _h;
 
   return _vm.loading || !_vm.isFinishAnimationEnded ? _c('div', {
-    class: _vm.containerClass
-  }, [_vm._ssrNode("<div" + _vm._ssrClass(null, _vm.barClass) + _vm._ssrStyle(null, {
-    backgroundColor: _vm.barBgColor
-  }, null) + " data-v-44a53d0a><div" + _vm._ssrClass(null, [_vm.progressClass, {
+    class: _vm.baseClass
+  }, [_vm._ssrNode("<div" + _vm._ssrClass(null, _vm.baseClass + "__bar") + " data-v-650e137a><div" + _vm._ssrClass(null, [_vm.baseClass + "__progress", {
     'animate-pulse': _vm.pulse
   }]) + _vm._ssrStyle(null, {
-    width: _vm.progress + "%",
-    backgroundColor: _vm.progressBgColor
-  }, null) + " data-v-44a53d0a></div></div> <div" + _vm._ssrClass(null, _vm.textClass) + _vm._ssrStyle(null, {
-    color: _vm.textColor
-  }, null) + " data-v-44a53d0a>" + _vm._ssrEscape(_vm._s(_vm.text)) + "</div>")], 2) : _c(_vm.tag, {
-    tag: "component"
+    width: _vm.progress + "%"
+  }, null) + " data-v-650e137a></div></div> <div" + _vm._ssrClass(null, _vm.baseClass + "__text") + " data-v-650e137a>" + _vm._ssrEscape("\n    " + _vm._s(_vm.text) + "\n  ") + "</div>")], 2) : _c(_vm.tag, {
+    tag: "component",
+    class: _vm.contentClass
   }, [_vm._t("default")], 2);
 };
 
@@ -237,8 +212,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-44a53d0a_0", {
-    source: ".loading-wrapper[data-v-44a53d0a]{display:flex;flex-direction:column;justify-content:center;align-items:center;user-select:none}.loading-wrapper__bar[data-v-44a53d0a]{position:relative;width:10rem}.loading-wrapper__progress[data-v-44a53d0a]{height:.05rem;transition:width .25s linear}.animate-pulse[data-v-44a53d0a]{animation:pulse-data-v-44a53d0a .5s ease infinite}.loading-wrapper__text[data-v-44a53d0a]{font-family:sans-serif;font-size:.8rem}@keyframes pulse-data-v-44a53d0a{from,to{opacity:1}50%{opacity:.25}}",
+  inject("data-v-650e137a_0", {
+    source: ".loading-wrapper[data-v-650e137a]{display:flex;flex-direction:column;justify-content:center;align-items:center;user-select:none}.loading-wrapper__bar[data-v-650e137a]{position:relative;width:10rem;background:rgba(0,0,0,.15)}.loading-wrapper__progress[data-v-650e137a]{height:.05rem;transition:width .25s linear;background-color:rgba(0,0,0,.5)}.animate-pulse[data-v-650e137a]{animation:pulse-data-v-650e137a .5s ease infinite}.loading-wrapper__text[data-v-650e137a]{font-family:sans-serif;font-size:.8rem;color:rgba(0,0,0,.9)}@keyframes pulse-data-v-650e137a{from,to{opacity:1}50%{opacity:.25}}",
     map: undefined,
     media: undefined
   });
@@ -246,10 +221,10 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-44a53d0a";
+var __vue_scope_id__ = "data-v-650e137a";
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-44a53d0a";
+var __vue_module_identifier__ = "data-v-650e137a";
 /* functional template */
 
 var __vue_is_functional_template__ = false;

@@ -26,9 +26,7 @@ export default {
 ## Usage
 
 ```html
-<loading-wrapper :loading="isLoading"
-  >Some dynamic content loaded</loading-wrapper
->
+<loading-wrapper :loading="isLoading">Some dynamic content loaded</loading-wrapper>
 ```
 
 ## Props
