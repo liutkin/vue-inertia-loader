@@ -26,24 +26,21 @@ export default {
 ## Usage
 
 ```html
-<loading-wrapper :loading="isLoading">Some dynamic content loaded</loading-wrapper>
+<loading-wrapper :loading="isLoading"
+  >Some dynamic content loaded</loading-wrapper
+>
 ```
 
 ## Props
 
-| Prop              | Type      | Required | Default                       | Description                     |
-| ----------------- | --------- | -------- | ----------------------------- | ------------------------------- |
-| `loading`         | `Boolean` | `false`  | `false`                       | Toggle animation                |
-| `pulse`           | `Boolean` | `false`  | `false`                       | Toggle progress pulse animation |
-| `text`            | `String`  | `false`  | `"Loading"`                   | Text label                      |
-| `tag`             | `String`  | `false`  | `"div"`                       | Root HTML element tag           |
-| `containerClass`  | `String`  | `false`  | `"loading-wrapper"`           | Root CSS class                  |
-| `barClass`        | `String`  | `false`  | `"loading-wrapper__bar"`      | Bar CSS class                   |
-| `progressClass`   | `String`  | `false`  | `"loading-wrapper__progress"` | Progress CSS class              |
-| `textClass`       | `String`  | `false`  | `"loading-wrapper__text"`     | Text label CSS class            |
-| `barBgColor`      | `String`  | `false`  | `"rgba(0, 0, 0, 0.15)"`       | Bar background color            |
-| `progressBgColor` | `String`  | `false`  | `"rgba(0, 0, 0, 0.5)"`        | Progress background color       |
-| `textColor`       | `String`  | `false`  | `"rgba(rgba(0, 0, 0, 0.9))"`  | Text label color                |
+| Prop           | Type      | Required | Default             | Description                     |
+| -------------- | --------- | -------- | ------------------- | ------------------------------- |
+| `loading`      | `Boolean` | `false`  | `false`             | Toggle animation                |
+| `pulse`        | `Boolean` | `false`  | `false`             | Toggle progress pulse animation |
+| `text`         | `String`  | `false`  | `"Loading"`         | Text label                      |
+| `tag`          | `String`  | `false`  | `"div"`             | Root HTML element tag           |
+| `baseClass`    | `String`  | `false`  | `"loading-wrapper"` | Base CSS class                  |
+| `contentClass` | `String`  | `false`  | `""`                | Content CSS class               |
 
 ## Slots
 

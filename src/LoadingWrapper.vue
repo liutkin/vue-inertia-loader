@@ -1,17 +1,16 @@
 <template>
-  <div v-if="loading || !isFinishAnimationEnded" :class="containerClass">
-    <div :class="barClass" :style="{ backgroundColor: barBgColor }">
+  <div v-if="loading || !isFinishAnimationEnded" :class="baseClass">
+    <div :class="`${baseClass}__bar`">
       <div
-        :style="{
-          width: `${progress}%`,
-          backgroundColor: progressBgColor,
-        }"
-        :class="[progressClass, { 'animate-pulse': pulse }]"
+        :style="{ width: `${progress}%` }"
+        :class="[`${baseClass}__progress`, { 'animate-pulse': pulse }]"
       ></div>
     </div>
-    <div :class="textClass" :style="{ color: textColor }">{{ text }}</div>
+    <div :class="`${baseClass}__text`">
+      {{ text }}
+    </div>
   </div>
-  <component v-else :is="tag"><slot /></component>
+  <component v-else :is="tag" :class="contentClass"><slot /></component>
 </template>
 
 <script>
@@ -28,33 +27,13 @@ export default {
       type: String,
       default: "div",
     },
-    containerClass: {
+    baseClass: {
       type: String,
       default: "loading-wrapper",
     },
-    barClass: {
+    contentClass: {
       type: String,
-      default: "loading-wrapper__bar",
-    },
-    progressClass: {
-      type: String,
-      default: "loading-wrapper__progress",
-    },
-    textClass: {
-      type: String,
-      default: "loading-wrapper__text",
-    },
-    barBgColor: {
-      type: String,
-      default: "rgba(0, 0, 0, 0.15)",
-    },
-    progressBgColor: {
-      type: String,
-      default: "rgba(0, 0, 0, 0.5)",
-    },
-    textColor: {
-      type: String,
-      default: "rgba(0, 0, 0, 0.9)",
+      default: "",
     },
   },
   data: () => ({
@@ -106,11 +85,13 @@ export default {
 .loading-wrapper__bar {
   position: relative;
   width: 10rem;
+  background: rgba(0, 0, 0, 0.15);
 }
 
 .loading-wrapper__progress {
   height: 0.05rem;
   transition: width 0.25s linear;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .animate-pulse {
@@ -120,6 +101,7 @@ export default {
 .loading-wrapper__text {
   font-family: sans-serif;
   font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.9);
 }
 
 @keyframes pulse {
